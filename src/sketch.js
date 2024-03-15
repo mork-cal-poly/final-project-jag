@@ -14,7 +14,7 @@ function draw() {
   }
   timer++; */
 
-  //_________ Background x, y, floor
+  //_________ Background x, y, floor,cloud
   drawBackground(0,0,color(202, 240, 248),color(255))
   
   //_______________Dog________________
@@ -34,15 +34,14 @@ function drawBackground(x,y,colorFloor,colorCloud){
     fill(colorFloor)
     noStroke();
     rect(0, 300, 400, 100) 
-   pop();
-
-  /*() push():
+  
     //dream cloud 
-    translate(x,y);
     fill(colorCloud);
-    strokeWeight(4);
-    ellipse(200,300,400)
-    pop(); */
+    ellipse(200,90,400,200);
+    ellipse(120,210,30);
+    ellipse(120,260,20);
+  
+  pop(); 
 }
 
 //_________________Function for Dog___________________
