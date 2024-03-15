@@ -20,11 +20,14 @@ function draw() {
   //_______________Dog________________
     //x,y,colorDark,colorLight,colorEye
      drawDog(250,390,color(29,53,87),color(241,233,218),color(0));
-     
+
+  //draw super 
+     drawSuper(200,390,color(29,53,87),color(241,233,218),color(0));
+
 }
 //_________________Draw Background____________
 
-function drawBackground(x,y,colorFloor,colorSnow){
+function drawBackground(x,y,colorFloor,colorCloud){
   push();
     //—Floor
     translate(x,y)
@@ -33,6 +36,13 @@ function drawBackground(x,y,colorFloor,colorSnow){
     rect(0, 300, 400, 100) 
    pop();
 
+  /*() push():
+    //dream cloud 
+    translate(x,y);
+    fill(colorCloud);
+    strokeWeight(4);
+    ellipse(200,300,400)
+    pop(); */
 }
 
 //_________________Function for Dog___________________
@@ -82,7 +92,64 @@ function drawDog(x,y,colorDark,colorLight,colorEye){
 
   pop(); 
 
+}
 
+
+//_________________Function for Super___________________
+function drawSuper(x,y,colorDark,colorLight,colorEye){
+
+  push();
+    translate(x, y);
+    //noStroke();
+  
+  //leg
+    fill(colorDark);
+    ellipse(-80,-278,50,25);
+    ellipse(-70,-270,60,30);
+    
+  //tail
+    fill(colorLight);
+    ellipse(-87.5,-300,60,20);
+
+
+  //----body
+    fill(colorDark);
+    ellipse(5,-295,150,80);
+
+  //arms
+    fill(colorDark);
+    ellipse(70,-280,60,30);
+  
+  //cape
+    fill(colorEye);
+    quad(-125,-305,-100,-375,64,-325,55,-315);
+
+  //head
+    fill(colorLight);
+    ellipse(50,-337.5,80,65);
+
+  //mask
+    fill(colorDark);
+    rect(10,-350,80,20);
+
+  //ears
+    push(); 
+      translate(0, -340); 
+      rotate(3*PI / 4); 
+      fill(colorDark);
+      ellipse(0, 0, 70, 25); 
+    pop(); 
+    
+  //nose
+    fill(colorDark);
+   
+  //eyes
+    fill(colorEye);
+    ellipse(70,-340,7);
+    
+    
+  pop(); 
+  
 
 
 
