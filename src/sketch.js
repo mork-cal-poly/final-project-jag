@@ -1,4 +1,6 @@
 let timer = 0;
+let clicked = false;
+
 
 function setup() {
   // For ordering nodes in the DOM
@@ -14,19 +16,30 @@ function draw() {
   }
   timer++; */
 
-  //_________ Background x, y, floor,cloud
-  drawBackground(0,0,color(202, 240, 248),color(255))
+  //_________ Background x, y, floor
+  drawBackground(0,0,color(202, 240, 248))
   
+
+  //draw surprise
+   drawSurprise(0,0,color(220));
+
   //_______________Dog________________
     //x,y,colorDark,colorLight,colorEye
-     drawDog(250,390,color(29,53,87),color(241,233,218),color(0));
+    drawDog(250,390,color(29,53,87),color(241,233,218),color(0));
 
-  //draw super 
-     drawSuper(200,390,color(29,53,87),color(241,233,218),color(0));
+  //draw super
+      if(clicked){
+        drawCloud(0,0,color(255));
+        drawSuper(200,390,color(29,53,87),color(241,233,218),color(0));
+      
+    }
 
 }
 //_________________Draw Background____________
 
+
+
+//_____________Draw Background
 function drawBackground(x,y,colorFloor,colorCloud){
   push();
     //—Floor
@@ -35,7 +48,14 @@ function drawBackground(x,y,colorFloor,colorCloud){
     noStroke();
     rect(0, 300, 400, 100) 
   
+  pop(); 
+}
+
+function drawCloud(x,y, colorCloud){
+  push();
+  
     //dream cloud 
+    translate(x,y);
     fill(colorCloud);
     ellipse(200,90,400,200);
     ellipse(120,210,30);
@@ -43,6 +63,8 @@ function drawBackground(x,y,colorFloor,colorCloud){
   
   pop(); 
 }
+
+
 
 //_________________Function for Dog___________________
 function drawDog(x,y,colorDark,colorLight,colorEye){
@@ -145,13 +167,34 @@ function drawSuper(x,y,colorDark,colorLight,colorEye){
   //eyes
     fill(colorEye);
     ellipse(70,-340,7);
-    
+  
     
   pop(); 
-  
-
-
-
 }
+
+//_________________Draw Surprise____________
+
+
+function drawSurprise(x,y,colorDream){
+  push();
+  
+    //dream appears 
+    fill(colorDream);
+    noStroke();
+    translate(x,y);
+    rect(0,0,400,270);
+  
+  pop(); 
+} 
+  
+  function mouseClicked() {
+    if (mouseY > 270) { 
+      clicked = !clicked;
+    }
+
+    
+  }
+
+
 
 
