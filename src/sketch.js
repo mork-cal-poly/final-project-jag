@@ -33,7 +33,20 @@ function draw() {
             
           }
     } else if (scene == 1) {
-      background(255);
+      background('#ADD8E6');
+
+  
+   // Draw random hearts
+  for (let i = 0; i < 15; i++) {
+    drawHeart(random(width), random(height));
+  }
+  
+  // Draw other elements
+  drawBHeart(0, 0);
+  drawPuppy(0, 0, color('#F9F6EE'), color('black'), color('#89CFF0'));
+  drawLippy(0, 0, color('gray'), color('black'), color('pink'));
+  
+  
     } else {
       drawBG()
       drawPuffy(350+dogX,0)
@@ -320,5 +333,83 @@ function drawTail(x,y,rotateP){
   pop()
 
   }
+
+
+// Function for Heart
+function drawHeart(x, y) {
+  push();
+  translate(x, y);
+  noStroke();
+  fill('red');
+  ellipse(0, 0, 20);
+  ellipse(15, 0, 20);
+  triangle(-9, 5, 24, 5, 7.5, 25);
+  pop();
+}
+
+// Function for big heart
+function drawBHeart(x, y) {
+  push();
+  translate(150, 150);
+  scale(7.5);
+  noStroke();
+  fill('pink');
+  ellipse(0, 0, 20);
+  ellipse(15, 0, 20);
+  triangle(-8.7, 5, 23.8, 5, 7.5, 25);
+  pop();
+}
+
+// Function for drawing Puffy
+function drawPuppy(x, y, colorFur, colorEye, colorMask) {
+  push();
+  translate(20, 0);
+  noStroke();
+  //tail
+  fill(colorFur);
+  ellipse(115, 225, 40, 20);
+  //legs
+  fill(colorFur);
+  rect(140, 180, 40, 15);
+  rect(140, 215, 40, 15);
+  ellipse(135, 200, 60, 70);
+  rect(135, 190, 40, 15);
+  //ears
+  ellipse(110, 150, 25, 15);
+  ellipse(165, 150, 25, 15);
+  //head
+  ellipse(140, 160, 50, 40);
+  rect(130, 220, 40, 15);
+  //face
+  fill(colorMask);
+  rect(115, 150, 50, 15);
+  fill(colorEye);
+  ellipse(125, 160, 10);
+  ellipse(155, 160, 10);
+  ellipse(140, 165, 7, 5);
+  pop();
+}
+
+// Function for drawing Lippy
+function drawLippy(x, y, colorFur, colorEye, colorNose) {
+  push();
+  noStroke();
+  //body
+  fill(colorFur);
+  ellipse(250, 250, 35, 80);
+  triangle(225, 155, 245, 150, 235, 130);
+  triangle(255, 150, 275, 155, 265, 130);
+  ellipse(250, 200, 70, 80);
+  //head
+  ellipse(250, 160, 50, 40);
+  //face
+  fill(colorEye);
+  ellipse(235, 160, 10);
+  ellipse(260, 160, 10);
+  fill(colorNose);
+  triangle(242, 165, 253, 165, 248, 170);
+  pop();
+}
+
 
 
