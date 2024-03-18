@@ -1,6 +1,6 @@
 let timer = 0;
 let clicked = false;
-
+let scene = 0;
 
 function setup() {
   // For ordering nodes in the DOM
@@ -9,7 +9,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(253,231,184);
 
  /* if (timer > 60 && timer < 100) {
     text("Hi!", 200, 200);
@@ -17,30 +17,47 @@ function draw() {
   timer++; */
 
   //_________ Background x, y, floor
-  drawBackground(0,0,color(202, 240, 248))
+  drawBackground(0,0,color(255,218,146))
   
 
   //draw surprise
-   drawSurprise(0,0,color(220));
+   drawSurprise(0,0,color(253,231,184));
 
   //_______________Dog________________
     //x,y,colorDark,colorLight,colorEye
-    drawDog(250,390,color(29,53,87),color(241,233,218),color(0));
+    drawDog(250,390,color(239,239,239),color('#F9F6EE'),color(0));
 
   //draw super
       if(clicked){
-        drawCloud(0,0,color(255));
-        drawSuper(200,390,color(29,53,87),color(241,233,218),color(0));
+        drawCloud(0,0,color(181,230,252));
+        drawSuper(200,390,color(239,239,239),color('#F9F6EE'),color(0),color('#89CFF0'));
       
     }
 
+    /*if (scene == 0) {
+      background(0); //put my code here of the background and the draw surprise 
+    } else if (scene == 1) {
+      background(255);
+    } else {
+      background(100);
+    }
+    timer++;
+    if (timer > 400 && scene == 0) {
+      scene = 1;
+      timer = 0;
+
+    } else if (timer > 200 && scene == 1) {
+      scene = 2;
+      timer = 0;
+
+    } */
 }
 //_________________Draw Background____________
 
 
 
 //_____________Draw Background
-function drawBackground(x,y,colorFloor,colorCloud){
+function drawBackground(x,y,colorFloor){
   push();
     //—Floor
     translate(x,y)
@@ -117,7 +134,7 @@ function drawDog(x,y,colorDark,colorLight,colorEye){
 
 
 //_________________Function for Super___________________
-function drawSuper(x,y,colorDark,colorLight,colorEye){
+function drawSuper(x,y,colorDark,colorLight,colorEye,colorMask){
 
   push();
     translate(x, y);
@@ -142,7 +159,7 @@ function drawSuper(x,y,colorDark,colorLight,colorEye){
     ellipse(70,-280,60,30);
   
   //cape
-    fill(colorEye);
+    fill(colorMask);
     quad(-125,-305,-100,-375,64,-325,55,-315);
 
   //head
@@ -150,7 +167,7 @@ function drawSuper(x,y,colorDark,colorLight,colorEye){
     ellipse(50,-337.5,80,65);
 
   //mask
-    fill(colorDark);
+    fill(colorMask);
     rect(10,-350,80,20);
 
   //ears
