@@ -8,13 +8,8 @@ function setup() {
   myCanvas.parent("canvas-parent");
 }
 
-function draw() {
+/*function draw() {
   background(253,231,184);
-
- /* if (timer > 60 && timer < 100) {
-    text("Hi!", 200, 200);
-  }
-  timer++; */
 
   //_________ Background x, y, floor
   drawBackground(0,0,color(255,218,146))
@@ -32,10 +27,30 @@ function draw() {
         drawCloud(0,0,color(181,230,252));
         drawSuper(200,390,color(239,239,239),color('#F9F6EE'),color(0),color('#89CFF0'));
       
-    }
+    } */
 
-    /*if (scene == 0) {
-      background(0); //put my code here of the background and the draw surprise 
+    function draw() {
+    if (scene == 0) {
+    
+        background(253,231,184);
+      
+        //_________ Background x, y, floor
+        drawBackground(0,0,color(255,218,146))
+        
+      
+        //draw surprise
+         drawSurprise(0,0,color(253,231,184));
+      
+        //_______________Dog________________
+          //x,y,colorDark,colorLight,colorEye
+          drawDog(250,390,color(239,239,239),color('#F9F6EE'),color(0));
+      
+        //draw super
+            if(clicked){
+              drawCloud(0,0,color(181,230,252));
+              drawSuper(200,390,color(239,239,239),color('#F9F6EE'),color(0),color('#89CFF0'));
+            
+          }
     } else if (scene == 1) {
       background(255);
     } else {
@@ -50,7 +65,7 @@ function draw() {
       scene = 2;
       timer = 0;
 
-    } */
+    } 
 }
 //_________________Draw Background____________
 
