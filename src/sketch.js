@@ -1,6 +1,8 @@
 let timer = 0;
 let clicked = false;
 let scene = 0;
+let dogX = 0
+let rotateP = 0
 
 function setup() {
   // For ordering nodes in the DOM
