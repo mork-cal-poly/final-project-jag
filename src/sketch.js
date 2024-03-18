@@ -33,8 +33,17 @@ function draw() {
     } else if (scene == 1) {
       background(255);
     } else {
-      background(100);
-    }
+      drawBG()
+      drawPuffy(350+dogX,0)
+        if(dogX > -350){  
+        dogX = dogX - 1
+        }
+        if(dogX <= -350){
+          rotateP = rotateP - 0.1
+          drawKitty(0,0)
+          drawTail(270,300,7*PI/4+rotateP)
+        }
+          }
     timer++;
     if (timer > 400 && scene == 0) {
       scene = 1;
