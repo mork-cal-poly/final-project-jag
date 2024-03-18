@@ -43,7 +43,7 @@ function draw() {
   
   // Draw other elements
   drawBHeart(0, 0);
-  drawPuffy(0, 0, color('#F9F6EE'), color('black'), color('#89CFF0'));
+  drawPuppy(0, 0, color('#F9F6EE'), color('black'), color('#89CFF0'));
   drawLippy(0, 0, color('gray'), color('black'), color('pink'));
   
   
@@ -361,7 +361,7 @@ function drawBHeart(x, y) {
 }
 
 // Function for drawing Puffy
-function drawPuffy(x, y, colorFur, colorEye, colorMask) {
+function drawPuppy(x, y, colorFur, colorEye, colorMask) {
   push();
   translate(20, 0);
   noStroke();
