@@ -215,6 +215,108 @@ function drawSurprise(x,y,colorDream){
     
   }
 
+//----------function for background(Han's scene 3)
+function drawBG(){
+  fill("rgb(255,245,222)")
+  noStroke()
+  rect(0,0,400,400)
+  
+  // floor
+  fill("rgb(255,218,146)")
+  strokeWeight(5)
+  stroke("rgb(194,178,148)") 
+  triangle(400,400,250,250,0,400)
 
+  // left wall  
+  fill("rgb(253,231,184)")
+  noStroke()
+  quad(250,0,400,0,400,396,250,246)
+  
+  // window
+  fill("rgb(181,230,252)")
+  strokeWeight(7)
+  stroke("rgb(196,194,194)") 
+  quad(200,50, 200,210,50,300,50,100)
+  strokeWeight(5)
+  line(125,75,126,251)
+  strokeWeight(10)
+  stroke("rgb(255,255,255)") 
+  line(47,313,210,215)
+  line(45,92,205,40)
+}
+
+//----------function for kitty(Han's scene 3)
+function drawKitty(x,y){
+  push()
+  translate(x,y)
+  //kitty face
+  fill("rgb(251,217,217)") //ear
+  strokeWeight(3)
+  stroke("rgb(114,111,111)")
+  triangle(140,185,150,160,130,160) 
+  triangle(165,160,185,145,180,175)
+  
+  fill("rgb(114,111,111)")//body
+  noStroke()
+  rect(145,190,30,50)
+  
+  fill("rgb(114,111,111)")//face
+  ellipse(160,180,45,45)
+  
+  // eyes and nose
+  fill(0)
+  noStroke()
+  ellipse(150,180,6,10)
+  ellipse(170,180,6,10)
+  fill("rgb(251,217,217)")
+  ellipse(160,190,10,6)
+  
+  //kitty hand
+  fill("rgb(136,133,133)")
+  noStroke()
+  ellipse(145,215,10,30)
+  rotate(PI/4)
+  ellipse(270,10,10,30)
+  pop()
+}
+//----------function for dog (Han's scene 3)
+  function drawPuffy(dogX,y) { 
+  push()
+  translate(dogX,y)
+  //puffy body
+  noStroke()
+  fill(255)
+  ellipse(235,310,85,65)
+  
+  
+  //puffy face
+  fill(255)
+  ellipse(195,300,60,60)//head
+  ellipse(175,310,30,20)//nose
+  fill("rgb(239,239,239)")
+  ellipse(205,305,20,45)//ear
+  fill(0)
+  ellipse(180,295,7,13)//eye
+  ellipse(163,310,8,8)//nose
+    
+  //puffy leg
+  fill(255)
+  ellipse(220,340,20,25)
+  ellipse(260,335,20,30)
+  pop()
+  }
+
+//----------function for dog's tail (Han's scene 3)
+function drawTail(x,y,rotateP){
+  //puffy tails
+  push()
+  translate(x,y)
+  rotate(rotateP)
+  fill("rgb(255,255,255)")
+  noStroke()
+  arc(0,0, 15,50,0,PI)
+  pop()
+
+  }
 
 
