@@ -33,7 +33,20 @@ function draw() {
             
           }
     } else if (scene == 1) {
-      background(255);
+      background('#ADD8E6');
+
+  
+   // Draw random hearts
+  for (let i = 0; i < 15; i++) {
+    drawHeart(random(width), random(height));
+  }
+  
+  // Draw other elements
+  drawBHeart(0, 0);
+  drawPuffy(0, 0, color('#F9F6EE'), color('black'), color('#89CFF0'));
+  drawLippy(0, 0, color('gray'), color('black'), color('pink'));
+  
+  
     } else {
       drawBG()
       drawPuffy(350+dogX,0)
